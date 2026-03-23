@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { GoalWithProgress, GoalContribution } from "../types";
-import { addGoalContribution, removeGoalContribution, getGoals, getCurrentMonthKey, getAuditForMonth, formatMonthKey } from "../utils/storage";
+import { GoalWithProgress } from "../types";
+import { addGoalContribution, removeGoalContribution, getCurrentMonthKey, getAuditForMonth, formatMonthKey } from "../utils/storage";
 
 interface Props {
   goals: GoalWithProgress[];

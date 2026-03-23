@@ -1,5 +1,5 @@
 import React from "react";
-import { SavedProfile, GoalWithProgress, AuditResult, CATEGORY_LABELS } from "../types";
+import { SavedProfile, GoalWithProgress, CATEGORY_LABELS } from "../types";
 import { getCurrentMonthKey, formatMonthKey, getAuditForMonth } from "../utils/storage";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 const fmt = (n: number) => `₹${Math.round(n).toLocaleString("en-IN")}`;
 
 // Compute a simple financial health score 0-100
-function computeHealthScore(profile: SavedProfile, audit?: AuditResult | null): number {
+function computeHealthScore(profile: SavedProfile): number {
   const calc = profile.calculationResult;
   let score = 0;
   // Savings rate 0-40 pts
@@ -63,7 +63,7 @@ const Dashboard: React.FC<Props> = ({ profile, goals, onNavigate }) => {
   const monthLabel = formatMonthKey(monthKey);
   const calc       = profile.calculationResult;
   const audit      = getAuditForMonth(monthKey);
-  const score      = computeHealthScore(profile, audit);
+  const score      = computeHealthScore(profile);
   const { label: scoreTag, color: scoreColor } = scoreLabel(score);
   const achievable = calc.goalResults.filter(g => g.isAchievable).length;
 

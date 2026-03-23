@@ -57,12 +57,12 @@ function normaliseDate(raw: string): string {
   const s = raw.trim();
 
   // Try common formats: DD/MM/YYYY, DD-MM-YYYY, DD MMM YYYY, MM/DD/YYYY
-  const formats: RegExp[] = [
-    /^(\d{2})[\/\-](\d{2})[\/\-](\d{4})$/,    // DD/MM/YYYY or DD-MM-YYYY
-    /^(\d{2})[\/\-](\d{2})[\/\-](\d{2})$/,     // DD/MM/YY
-    /^(\d{4})[\/\-](\d{2})[\/\-](\d{2})$/,     // YYYY-MM-DD
-    /^(\d{2})\s+([A-Za-z]{3})\s+(\d{4})$/,     // DD MMM YYYY
-  ];
+  // const formats: RegExp[] = [
+  //   /^(\d{2})[\/\-](\d{2})[\/\-](\d{4})$/,    // DD/MM/YYYY or DD-MM-YYYY
+  //   /^(\d{2})[\/\-](\d{2})[\/\-](\d{2})$/,     // DD/MM/YY
+  //   /^(\d{4})[\/\-](\d{2})[\/\-](\d{2})$/,     // YYYY-MM-DD
+  //   /^(\d{2})\s+([A-Za-z]{3})\s+(\d{4})$/,     // DD MMM YYYY
+  // ];
 
   const monthNames: Record<string, string> = {
     jan:"01",feb:"02",mar:"03",apr:"04",may:"05",jun:"06",

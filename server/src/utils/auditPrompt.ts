@@ -478,7 +478,7 @@ async function withRetry<T>(
 //  This keeps PDF path at 2 calls total as well.
 // ──────────────────────────────────────────────────────────────────
 
-function buildPDFExtractPrompt(pageCount?: number): string {
+function buildPDFExtractPrompt(): string {
   return `Extract EVERY SINGLE transaction row from this bank statement PDF.
 
 CRITICAL: Do not stop early. Do not summarise. Do not sample.
