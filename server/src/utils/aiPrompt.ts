@@ -96,10 +96,12 @@ ${goalLines}
 // Models to try in order. If one fails with quota/404, the next is attempted.
 // gemini-2.0-flash-lite has the most reliable free tier across regions.
 const GEMINI_MODELS = [
+  "gemini-2.5-flash",        // may have limit:0 on some free accounts
+  "gemini-2.5-pro",        // may have limit:0 on some free accounts
+  "gemini-2.0-flash",   // best free tier availability, lightest
+  "gemini-2.0-flash-001",   // best free tier availability, lightest
+  "gemini-2.0-flash-lite-001",   // best free tier availability, lightest
   "gemini-2.0-flash-lite",   // best free tier availability, lightest
-  // "gemini-1.5-flash-8b",     // older but widely available fallback
-  // "gemini-2.5-flash",        // may have limit:0 on some free accounts
-  // "gemini-3.0-flash",        // may have limit:0 on some free accounts
 ];
 
 // Sleep helper for retry delay

@@ -41,9 +41,12 @@ import {
 
 // ── Config ──────────────────────────────────────
 const GEMINI_MODELS = [
-  "gemini-2.0-flash-lite",
-  "gemini-1.5-flash-8b",
-  "gemini-2.0-flash",
+  "gemini-2.5-flash",        // may have limit:0 on some free accounts
+  "gemini-2.5-pro",        // may have limit:0 on some free accounts
+  "gemini-2.0-flash",   // best free tier availability, lightest
+  "gemini-2.0-flash-001",   // best free tier availability, lightest
+  "gemini-2.0-flash-lite-001",   // best free tier availability, lightest
+  "gemini-2.0-flash-lite", 
 ];
 
 // Delay between the two calls — 15s keeps us safely at 4/min
