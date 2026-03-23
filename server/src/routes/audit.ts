@@ -8,7 +8,7 @@
 // ─────────────────────────────────────────────
 
 import { Router, Request, Response } from "express";
-import { AuditRequest } from "../../../client/src/types/index";
+import { AuditRequest } from "../types/index";
 import { runAuditAgent } from "../utils/auditPrompt";
 
 const router = Router();

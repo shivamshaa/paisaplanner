@@ -41,9 +41,9 @@ import {
 
 // ── Config ──────────────────────────────────────
 const GEMINI_MODELS = [
-  // "gemini-2.0-flash-lite",
-  // "gemini-1.5-flash-8b",
-  "gemini-2.5-flash",
+  "gemini-2.0-flash-lite",
+  "gemini-1.5-flash-8b",
+  "gemini-2.0-flash",
 ];
 
 // Delay between the two calls — 15s keeps us safely at 4/min
@@ -414,8 +414,8 @@ async function callInsights(
   // Extract numbered recommendations
   const recs = (recsSection || text)
     .split("\n")
-    .filter((l) => /^[123]\./.test(l.trim()))
-    .map((l) => l.replace(/^[123]\.\s*/, "").trim())
+    .filter((l: string) => /^[123]\./.test(l.trim()))
+    .map((l: string) => l.replace(/^[123]\.\s*/, "").trim())
     .filter(Boolean)
     .slice(0, 3);
 
